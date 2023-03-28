@@ -9,10 +9,13 @@
   "private": false,
   "dependencies": {
     "discord.js": "^14.8.0",
+    "dotenv": "^16.0.3",
     "prisma": "^4.11.0",
     "typescript": "^5.0.2"
   },
   "devDependencies": {
-    "eslint": "^8.36.0"
+    "eslint": "^8.36.0",
+    "nodemon": "^2.0.22",
+    "ts-node": "^10.9.1"
   }
 }
