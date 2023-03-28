@@ -1,3 +1,4 @@
 {
-  "cSpell.words": ["Doots", "dootsverse", "paren", "parens", "stroustrup"]
+  "cSpell.words": ["Doots", "dootsverse", "paren", "parens", "stroustrup"],
+  "cSpell.ignorePaths": ["config.json"]
 }
