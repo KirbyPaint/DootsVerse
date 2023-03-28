@@ -1,0 +1,13 @@
+{
+  "name": "dootsverse",
+  "version": "1.0.0",
+  "description": "[ALPHA] Combat game handled by a Discord bot",
+  "main": "src/index.ts",
+  "repository": "https://github.com/KirbyPaint/DootsVerse.git",
+  "author": "Ash Porter <porter.ashley13@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "typescript": "^5.0.2"
+  }
+}
