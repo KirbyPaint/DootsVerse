@@ -8,6 +8,7 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
+    "prisma": "^4.11.0",
     "typescript": "^5.0.2"
   }
 }
