@@ -1,5 +1,6 @@
 {
   "cSpell.words": [
+    "cooldown",
     "Doots",
     "dootsverse",
     "linebreak",
@@ -12,4 +13,7 @@
   "editor.formatOnSave": true,
   // enable for eslint-plugin json-format
   "eslint.validate": ["json"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  }
 }

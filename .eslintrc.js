@@ -7,8 +7,6 @@ module.exports = {
 		`eslint:recommended`,
 		`plugin:@typescript-eslint/recommended`
 	],
-	"overrides": [
-	],
 	"parser": `@typescript-eslint/parser`,
 	"parserOptions": {
 		"ecmaVersion": `latest`,
@@ -16,9 +14,13 @@ module.exports = {
 	},
 	"plugins": [
 		`@typescript-eslint`,
-		`json-format`
+		`json-format`,
+		`simple-import-sort`
 	],
 	"rules": {
+		// increase the severity of rules so they are auto-fixable
+		"simple-import-sort/imports": `error`,
+		"simple-import-sort/exports": `error`,
 		"indent": [
 			`error`,
 			`tab`
@@ -41,6 +43,34 @@ module.exports = {
 			"imports": `never`,
 			"exports": `never`,
 			"functions": `never`
-		}]
-	}
+		}],
+		'no-multiple-empty-lines': [`error`, { 'max': 1, 'maxEOF': 1 }]
+	},
+	"overrides": [
+		// override "simple-import-sort" config
+		{
+			"files": [`*.js`, `*.jsx`, `*.ts`, `*.tsx`],
+			"rules": {
+				"simple-import-sort/imports": [
+					`error`,
+					{
+						"groups": [
+							// Packages `react` related packages come first.
+							[`^react`, `^@?\\w`],
+							// Internal packages.
+							[`^(@|components)(/.*|$)`],
+							// Side effect imports.
+							[`^\\u0000`],
+							// Parent imports. Put `..` last.
+							[`^\\.\\.(?!/?$)`, `^\\.\\./?$`],
+							// Other relative imports. Put same-folder imports and `.` last.
+							[`^\\./(?=.*/)(?!/?$)`, `^\\.(?!/?$)`, `^\\./?$`],
+							// Style imports.
+							[`^.+\\.?(css)$`]
+						]
+					}
+				]
+			}
+		}
+	]
 };
