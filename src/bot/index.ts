@@ -1,15 +1,18 @@
 import { Client, Events, GatewayIntentBits, REST } from "discord.js";
 
+import { isDev } from "../util/env";
+
 export default class Bot {
 	public static client: Client = this.createClient();
 	public static restAPI = new REST({ version: `10` }).setToken(
 		process.env.BOT_TOKEN || ``
 	);
+	public static isDev = isDev;
 
 	public static async init() {
 		await self.login();
 		self.showStartupMessage();
-		self.client.user?.setActivity(`in DootsVerse`, { type: 5 });
+		self.client.user?.setActivity(`DootsVerse`, { type: 5 });
 	}
 
 	public static getName(): string {
