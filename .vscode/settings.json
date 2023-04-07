@@ -7,5 +7,9 @@
     "parens",
     "stroustrup"
   ],
-  "cSpell.ignorePaths": ["config.json"]
+  "cSpell.ignorePaths": ["config.json"],
+  "eslint.enable": true,
+  "editor.formatOnSave": true,
+  // enable for eslint-plugin json-format
+  "eslint.validate": ["json"],
 }

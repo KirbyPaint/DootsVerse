@@ -15,7 +15,8 @@ module.exports = {
 		"sourceType": `module`
 	},
 	"plugins": [
-		`@typescript-eslint`
+		`@typescript-eslint`,
+		`json-format`
 	],
 	"rules": {
 		"indent": [
@@ -33,6 +34,13 @@ module.exports = {
 		"semi": [
 			`error`,
 			`always`
-		]
+		],
+		"comma-dangle": [`error`, {
+			"arrays": `never`,
+			"objects": `never`,
+			"imports": `never`,
+			"exports": `never`,
+			"functions": `never`
+		}]
 	}
 };

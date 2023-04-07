@@ -22,13 +22,13 @@ export default class Bot {
 		const DISALLOWED_INTENTS: GatewayIntentBits[] = [
 			GatewayIntentBits.GuildMembers,
 			GatewayIntentBits.GuildPresences,
-			GatewayIntentBits.MessageContent,
+			GatewayIntentBits.MessageContent
 		];
 		const intents = Array.from({ length: 21 }, (_, i) => 2 ** i).filter(
 			(i) => !DISALLOWED_INTENTS.concat(NONEXISTENT_INTENTS).includes(i)
 		);
 		return new Client({
-			intents,
+			intents
 			// partials: [Partials.Channel],
 		});
 	}
@@ -47,7 +47,7 @@ export default class Bot {
 	private static showStartupMessage() {
 		const readyMessageLines = [
 			`Logged in as ${self.client.user?.tag}!`,
-			`Connected to the following servers:`,
+			`Connected to the following servers:`
 		];
 		self.client.guilds.cache.forEach((guild) => {
 			readyMessageLines.push(`  ${guild.name}`);
